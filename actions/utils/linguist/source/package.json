@@ -1,0 +1,26 @@
+{
+  "name": "packster-linguist",
+  "version": "1.0.0",
+  "description": "Programming Language Detector",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bilbilak/packster/actions/utils/linguist"
+  },
+  "keywords": [
+    "packster",
+    "linguist",
+    "programming",
+    "language",
+    "detector"
+  ],
+  "author": "The Artifex (4r7if3x)",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "linguist-js": "^2.7.1"
+  }
+}

@@ -1,0 +1,28 @@
+author: 'The Artifex (4r7if3x)'
+
+name: 'Packster: Programming Language Detector'
+description: 'Detects the programming language of the project'
+branding:
+  icon: code
+  color: gray-dark
+
+inputs:
+  path:
+    description: 'Source code path'
+    default: ${{ github.workspace }}
+
+outputs:
+  language:
+    description: 'Detected language'
+    value: ${{ steps.analyze.outputs.result }}
+
+runs:
+  using: composite
+  steps:
+    - name: Analyze codebase
+      id: analyze
+      uses: bilbilak/packster/actions/utils/action@main
+      with:
+        action: ${{ github.action_path }}
+      env:
+        INPUT_PATH: ${{ inputs.path }}
