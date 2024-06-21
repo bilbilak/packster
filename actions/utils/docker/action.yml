@@ -1,0 +1,28 @@
+author: 'The Artifex (4r7if3x)'
+
+name: 'Packster: Dockerized Script Runner'
+description: 'Runs script in a Docker container'
+branding:
+  icon: box
+  color: gray-dark
+
+inputs:
+  registry:
+    description: 'Image registry'
+  username:
+    description: 'Registry username'
+  password:
+    description: 'Registry password'
+  image:
+    description: 'Docker image'
+    required: true
+  shell:
+    description: 'Command Shell'
+    default: sh
+  run:
+    description: 'Script'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'container/Dockerfile'
