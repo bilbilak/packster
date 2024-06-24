@@ -1,0 +1,16 @@
+name: Release
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    uses: bilbilak/packster/.github/workflows/build.yml@main
+
+  package:
+    needs: build
+    uses: bilbilak/packster/.github/workflows/package.yml@main
+
+  publish:
+    needs: package
+    uses: bilbilak/packster/.github/workflows/publish.yml@main
